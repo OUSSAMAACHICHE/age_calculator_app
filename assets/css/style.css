@@ -1,0 +1,259 @@
+/*VARIABLES*/
+:root {
+
+
+	/* ## Colors  */
+
+	/* ### Primary */
+	--Purple: hsl(259, 100%, 65%);
+	--Lightred: hsl(0, 100%, 67%);
+
+	/* ### Neutral */
+
+	--White: hsl(0, 0%, 100%);
+	--Offwhite: hsl(0, 0%, 94%);
+	--Lightgrey: hsl(0, 0%, 86%);
+	--Smokeygrey: hsl(0, 1%, 44%);
+	--Offblack: hsl(0, 0%, 8%);
+
+}
+
+/* Fonts  */
+@font-face {
+	font-family: PoppinsBold;
+	src: url('../fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+	font-family: PoppinsBoldItalic;
+	src: url('../fonts/Poppins-BoldItalic.ttf');
+}
+
+@font-face {
+	font-family: PoppinsExtraBold;
+	src: url('../fonts/Poppins-ExtraBold.ttf');
+}
+
+@font-face {
+	font-family: PoppinsExtraBoldItalic;
+	src: url('../fonts/Poppins-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+	font-family: PoppinsItalic;
+	src: url('../fonts/Poppins-Italic.ttf');
+}
+
+@font-face {
+	font-family: PoppinsRegular;
+	src: url('../fonts/Poppins-Regular.ttf');
+}
+
+body {
+	font-family: 'PoppinsExtraBold';
+	margin: 0;
+	padding: 0;
+	background-color: var(--Lightgrey);
+}
+/* hide number input arrows  */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Reset & default */
+input {
+	font-size: 32px;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+/* Start styling  */
+main {
+	background-color: var(--White);
+	width: 90%;
+	margin: 100px auto;
+	padding: 20px;
+	border-radius: 20px;
+	border-bottom-right-radius: 100px;
+}
+main form {
+	display: flex;	
+	justify-content: space-between;
+	height: 140px;
+	border-bottom: 1px solid var(--Lightgrey);
+	position: relative;
+	margin-top: 20px;
+	/* flex-wrap: wrap; */
+}
+/* medium screen  */
+@media (min-width: 768px) {
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;
+	}
+	main {
+		width: 60%;
+		padding: 40px;
+	}
+	main form {
+		justify-content: start;
+		height: 100px;
+	}
+}
+/* large screen  */
+@media (min-width: 996px) {
+
+	main {
+		width: 45%;
+	}
+	main form {
+		height: 130px;
+	}
+	
+
+}
+main form label {
+	display: block;
+	color: var(--Smokeygrey);
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 0.8rem;
+}
+main form input {
+	width: 90px;
+	padding: 10px 6px;
+	font-size: 1.3rem;
+	margin-top: 5px;
+	border: 1px solid var(--Lightgrey);
+	border-radius: 10px;
+	font-family: inherit;
+	cursor: pointer;
+}
+main form input:focus {
+	outline: 1px solid var(--Offwhite);
+
+}
+main form button {
+	position: absolute;
+	bottom: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 50%;
+	border: none;
+	width: 60px;
+	height: 60px;
+	background-color: var(--Purple);
+	cursor: pointer;
+	transition: all .2s ease-in;
+}
+main form button:hover {
+	background-color: var(--Offblack);
+}
+@media (min-width: 768px) {
+
+	main form input {
+		width: 110px;
+		padding: 5px 10px;
+		border-radius: 5px;
+		margin-right: 10px;
+	}
+	main form button {
+		left: calc(100% - 30px);
+	}
+
+}
+/* large screen  */
+@media (min-width: 996px) {
+
+	main form input{
+		margin-right: 20px;
+		width: calc(100% - 20px / 3);
+		font-size: 32px;
+		padding: 5px 20px;
+	}
+}
+@media (min-width: 1096px) {
+
+	main form input{
+		width: calc(100% - 100px / 3);
+		margin-right: 0;
+		
+	}
+}
+
+main form button img {
+	width: 70%;
+}
+.info {
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+.info div {
+	font-size: 3.4rem;
+	line-height: 1.1;
+	font-family: 'PoppinsExtraBoldItalic';
+}
+
+.info span {
+	color: var(--Purple);
+	margin-right: 10px;
+}
+@media (min-width: 996px) {
+
+	.info div {
+		font-size:4.2rem;
+	}
+
+}
+.days-input, .months-input, .years-input {
+	position: relative;
+}
+.days-input .error {
+	color: var(--Lightred);
+	position: absolute;
+	left: 0;
+	bottom: 45px;
+	font-size: 0.5rem;
+}
+.months-input .error {
+	color: var(--Lightred);
+	position: absolute;
+	left: 0;
+	bottom: 45px;
+	font-size: 0.5rem;
+}
+.years-input .error {
+	color: var(--Lightred);
+	position: absolute;
+	left: 0;
+	bottom: 45px;
+	font-size: 0.5rem;
+}
+@media (min-width: 768px) {
+	.years-input .error, .months-input .error, .days-input .error {
+		bottom: 20px;
+	}
+}
+@media (min-width: 996px) {
+	.years-input .error, .months-input .error, .days-input .error {
+		bottom: 30px;
+	}
+}
